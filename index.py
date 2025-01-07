@@ -17,7 +17,7 @@ TOKEN = os.getenv("DISCORD_TOKEN")
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="$", intents=intents)
 
-COGS = ["moderation", "help", "welcome", "rank", "audit", "ticket", "fun", "log"]
+COGS = ["moderation", "help", "welcome", "rank", "audit", "ticket", "fun", "log", "dev", "casino", "valotracker", "automod"]
 
 @bot.event
 async def on_ready():
@@ -27,9 +27,9 @@ async def load_extensions():
     for cog in COGS:
         try:
             await bot.load_extension(f"cogs.{cog}")
-            print(f"Loaded {cog}.py")
+            print(f"Loaded {cog}")
         except Exception as e:
-            print(f"Failed to load {cog}.py: {e}")
+            print(f"Failed to load {cog}: {e}")
 
 async def main():
     async with bot:
