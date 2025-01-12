@@ -4,7 +4,7 @@ from discord.ext import commands
 class Welcome(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.welcome_channel_id = channel id
+        self.welcome_channel_id = welcome channel id
         self.role1_id = role id
         self.role2_id = role id
 
