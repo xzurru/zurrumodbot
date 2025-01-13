@@ -17,7 +17,7 @@ TOKEN = os.getenv("DISCORD_TOKEN")
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="$", intents=intents)
 
-COGS = ["moderation", "help", "welcome", "rank", "audit", "ticket", "fun", "log", "dev", "casino", "valotracker", "automod", "flag"]
+COGS = ["moderation", "help", "welcome", "rank", "audit", "ticket", "fun", "log", "dev", "casino", "safe_link", "automod", "flag"]
 
 @bot.event
 async def on_ready():
