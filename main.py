@@ -22,6 +22,10 @@ COGS = ["moderation", "help", "welcome", "rank", "audit", "ticket", "fun", "log"
 @bot.event
 async def on_ready():
     print(f"Bot is ready! Logged in as {bot.user}")
+    
+    # Setze den Status des Bots auf "Streamt for help $helpmenu"
+    activity = discord.Streaming(name="for help $helpmenu", url="https://twitch.tv/xzurru")
+    await bot.change_presence(activity=activity)
 
 async def load_extensions():
     for cog in COGS:
