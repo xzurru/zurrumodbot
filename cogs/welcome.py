@@ -4,9 +4,9 @@ from discord.ext import commands
 class Welcome(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.welcome_channel_id = welcome channel id
-        self.role1_id = role id
-        self.role2_id = role id
+        self.welcome_channel_id = 1284517411005005948
+        self.role1_id = 1284519960143462584
+        self.role2_id = 1287132493547569192
 
     @commands.Cog.listener()
     async def on_member_join(self, member):
