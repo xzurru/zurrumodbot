@@ -12,6 +12,7 @@ if sys.platform.startswith("win"):
 # Load environment variables
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
+GUILD_ID = os.getenv("GUILD_ID")  
 
 # Bot setup
 intents = discord.Intents.all()
@@ -19,22 +20,24 @@ bot = commands.Bot(command_prefix="$", intents=intents)
 
 COGS = [
     "moderation", "help", "welcome", "rank", "ticket", "fun", "log", 
-    "dev", "casino", "safe_link", "automod", "flag", "verify"
+    "dev", "casino", "safe_link", "automod", "flag", "verify", "afk"
 ]
 
 @bot.event
 async def on_ready():
-    try:
-        synced = await bot.tree.sync()
-        print(f"Synced {len(synced)} commands successfully!")
-    except discord.HTTPException as e:
-        print(f"Error syncing commands: {e}")
-
     print(f"Bot is ready! Logged in as {bot.user}")
 
-    # Set bot status to streaming
+    # Set bot status
     activity = discord.Streaming(name="for help $helpmenu", url="https://twitch.tv/xzurru")
     await bot.change_presence(activity=activity)
+
+    # Sync guild-specific commands
+    try:
+        guild = discord.Object(id=int(GUILD_ID))  # Specific guild
+        synced = await bot.tree.sync(guild=guild)
+        print(f"Synced {len(synced)} commands successfully to guild {GUILD_ID}.")
+    except discord.HTTPException as e:
+        print(f"Error syncing commands: {e}")
 
 async def load_extensions():
     for cog in COGS:
