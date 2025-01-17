@@ -20,7 +20,8 @@ bot = commands.Bot(command_prefix="$", intents=intents)
 
 COGS = [
     "moderation", "help", "welcome", "rank", "ticket", "fun", "log", 
-    "dev", "casino", "safe_link", "automod", "flag", "verify", "afk"
+    "dev", "casino", "safe_link", "automod", "flag", "verify", "afk",
+    "fishsim"
 ]
 
 @bot.event
