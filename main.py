@@ -16,7 +16,7 @@ GUILD_ID = os.getenv("GUILD_ID")
 
 # Bot setup
 intents = discord.Intents.all()
-bot = commands.Bot(command_prefix="$", intents=intents)
+bot = commands.Bot(command_prefix=",", intents=intents)
 
 COGS = [
     "moderation", "help", "welcome", "rank", "ticket", "fun", "log", 
@@ -29,7 +29,7 @@ async def on_ready():
     print(f"Bot is ready! Logged in as {bot.user}")
 
     # Set bot status
-    activity = discord.Streaming(name="for help $helpmenu", url="https://twitch.tv/xzurru")
+    activity = discord.Streaming(name="for help ,helpmenu", url="https://twitch.tv/xzurru")
     await bot.change_presence(activity=activity)
 
     # Sync guild-specific commands
