@@ -22,13 +22,20 @@ class Welcome(commands.Cog):
 
         if channel:
             embed = discord.Embed(
-                description=f"Welcome {member.mention}! Welcome, If you have any questions, use our support system. Have fun on the Discord!",
-                color=discord.Color.green()
+                title="Welcome to the Server!",
+                description=(
+                    f"Hello {member.mention}, welcome to our server!\n\n"
+                    f"You are member **#{len(member.guild.members)}**!"
+                ),
+                color=discord.Color.blue()
             )
             if member.avatar:
                 embed.set_thumbnail(url=member.avatar.url)
             else:
-                embed.set_thumbnail(url="https://via.placeholder.com/150")
+                embed.set_thumbnail(url=member.guild.icon.url if member.guild.icon else "https://via.placeholder.com/150")
+
+            embed.set_footer(text="We hope you enjoy your time here!")
+
             await channel.send(embed=embed)
 
 async def setup(bot):
