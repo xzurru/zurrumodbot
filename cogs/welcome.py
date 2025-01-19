@@ -24,7 +24,7 @@ class Welcome(commands.Cog):
             embed = discord.Embed(
                 title="Welcome to the Server!",
                 description=(
-                    f"Hello {member.mention}, welcome to our server!\n\n"
+                    f"Hello {member.mention}, Welcome, If you have any questions, use our support system. Have fun on the Discord!\n\n"
                     f"You are member **#{len(member.guild.members)}**!"
                 ),
                 color=discord.Color.blue()
