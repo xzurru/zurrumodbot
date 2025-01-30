@@ -21,7 +21,7 @@ bot = commands.Bot(command_prefix=",", intents=intents)
 COGS = [
     "moderation", "help", "welcome", "rank", "ticket", "fun", "log", 
     "dev", "casino", "safe_link", "automod", "flag", "verify", "afk",
-    "fishsim"
+    "fishsim", "digsite"
 ]
 
 @bot.event
@@ -29,7 +29,7 @@ async def on_ready():
     print(f"Bot is ready! Logged in as {bot.user}")
 
     # Set bot status
-    activity = discord.Streaming(name="Plutofnbr on twitch", url="https://twitch.tv/plutofnbr")
+    activity = discord.Streaming(name="for help ,helpmenu", url="https://twitch.tv/xzurru")
     await bot.change_presence(activity=activity)
 
     # Sync guild-specific commands
