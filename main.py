@@ -21,7 +21,7 @@ bot = commands.Bot(command_prefix=",", intents=intents)
 COGS = [
     "moderation", "help", "welcome", "rank", "ticket", "fun", "log", 
     "dev", "casino", "safe_link", "automod", "flag", "verify", "afk",
-    "fishsim", "digsite"
+    "fishsim", "digsite" ,"soon more"
 ]
 
 @bot.event
